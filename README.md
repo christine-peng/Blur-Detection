@@ -8,22 +8,24 @@ This method works using the Laplacian operator, which is used to measure the 2nd
 
 A challenge with this is setting the correct threshold, which can vary depending on the image. A threshold that is too low will overestimate image blur, while a threshold that is too high will underestimate image blur. 
 
-# How it works 
+## How it works 
 1.	Install necessary packages into command prompt 
-      install opencv-python
-        pip install cv2
-      install imutils
-        pip install imutils
-Modules used: 
-a.	argparse – Used to write user-friendly command line interfaces 
+       ```
+      # install opencv-python
+       python -m pip install cv2
+      # install imutils
+       python -m pip install imutils
+	```
+### Modules used: 
+- argparse – Used to write user-friendly command line interfaces 
         -	Arguments is used to trigger different action, specified by the action argument add_argument()
-b.	imutils – Functions used to make basic image processing such as translation, rotation, resizing, skeletonization, and displaying images easier with OpenCV 
-c.	opencv – Used for image and video analysis, like facial recognition and detection, license plate reading, photo editing, color filtering, edge detection, etc  
+- 	imutils – Functions used to make basic image processing such as translation, rotation, resizing, skeletonization, and displaying images easier with OpenCV 
+- 	opencv – Used for image and video analysis, like facial recognition and detection, license plate reading, photo editing, color filtering, edge detection, etc  
 
-2.	Place images in one project folder, and run command prompt to access project folder  
+2. 	Place images in one project folder, and run command prompt to access project folder  
 			python blur_detection.py --images images
 
-3.	The output will have a series of images with corresponding number, and a threshold which defines whether each image is blurry or not blurry. The default threshold is 100, but it can be changed by configuring the command prompt as such:  
+3. 	The output will have a series of images with corresponding number, and a threshold which defines whether each image is blurry or not blurry. The default threshold is 100, but it can be changed by configuring the command prompt as such:  
 
 		python blur-detection.py --images images --threshold 1000
 
