@@ -16,16 +16,16 @@ A challenge with this is setting the correct threshold, which can vary depending
       # install imutils
        python -m pip install imutils
 	```
-### Modules used: 
-- argparse – Used to write user-friendly command line interfaces 
-        -	Arguments is used to trigger different action, specified by the action argument add_argument()
-- 	imutils – Functions used to make basic image processing such as translation, rotation, resizing, skeletonization, and displaying images easier with OpenCV 
-- 	opencv – Used for image and video analysis, like facial recognition and detection, license plate reading, photo editing, color filtering, edge detection, etc  
-
 2. 	Place images in one project folder, and run command prompt to access project folder  
 	```
 	python blur_detection.py imagepath
 	```
+### Modules used: 
+- argparse – Used to write user-friendly command line interfaces 
+        -	Arguments is used to trigger different action, specified by the action argument add_argument()
+- 	imutils – Used to make basic image processing such as translation, rotation, resizing, skeletonization, and displaying images easier with OpenCV 
+- 	opencv – Used for image and video analysis, like facial recognition and detection, license plate reading, photo editing, color filtering, edge detection, etc  
+
 
 
 
