@@ -4,7 +4,7 @@ Blur detection with Opencv
 
 There are several approaches to analyze how blurry an image is using the Computer Vision Python package, with the most noteworthy methods being the Laplacian transformation, the Sobel filter, the Canny Edge detector, and the Fast Fourier Transform. 
 
-The Laplacian transformation, while not being the perfect solution, is the easiest method to distinguished between focued and blurred images. It operates by outputting a single floating point value to represent the “blurriness” of an image. This method convolves each input image with the Laplacian operator and computes the variance. If the variance falls below a predefined threshold, the image is marked as blurry. 
+The Laplacian transformation, while not the perfect solution, is the easiest method to distinguished between focued and blurred images. It operates by outputting a single floating point value to represent the “blurriness” of an image. This method convolves each input image with the Laplacian operator and computes the variance. If the variance falls below a predefined threshold, the image is marked as blurry. 
 			<p align="center">
 			![image](https://user-images.githubusercontent.com/83466109/117067306-b1c30f80-acde-11eb-8959-174554b5a57a.png)
 			</p>
@@ -52,6 +52,7 @@ There are several limitations to using the Laplacian method to detect blur. The 
 ![image](https://user-images.githubusercontent.com/83466109/116952409-73c2de80-ac3f-11eb-99c3-5a8722971a62.png)
 
 I thought partial motion blur in images could be a potential problem; however, based off the images I used, this method seems to have no problems distinguishing motion blur from overall image clarity. The values for given images below were all correctly identified as "not blurry". Given this result, there could be potential partial blurs in drone imagery as result of rain droplets or motion that may be misinterpreted as "not blurry" when in actuality it is partially blurry. Testing drone imagery with partial bluring may be necessary to get a better sense of how effective this approach is for drone-specific images.  
+![image](https://user-images.githubusercontent.com/83466109/117102673-a8ad5f00-ad2d-11eb-87c8-5df21b413d51.png)
 
 ![image](https://user-images.githubusercontent.com/83466109/117081148-2a809680-acf4-11eb-989f-558e7e45302f.png)
 
