@@ -1,10 +1,14 @@
 # Blur Detection 
 
-Blur detection with Opencv 
+## Blur detection with OpenCV: different approaches
+There are several approaches to analyze how blurry an image is using the Computer Vision(OpenCV) Python package, with the most noteworthy methods being through the Sobel filter, the Canny Edge detector, the Laplacian transformation, and the Fast Fourier Transform. 
 
-There are several approaches to analyze how blurry an image is using the Computer Vision Python package, with the most noteworthy methods being the Laplacian transformation, the Sobel filter, the Canny Edge detector, and the Fast Fourier Transform. 
+The first three methods(Sobel, Canny Edge, Laplacian) all function to detect edges in an image where pixel intensity shows a "jump", or a high variation of intensity. Canny edge and Sobel methods both use the first derivative of an image, meaning they calculate the change in gray pixel intensity of the image sparately for both X and Y values. While the Sobel method forms new image with the sum of X and Y edges of image, the Cannny edge method takes it one step further by getting rid of excess edges and keeping only the useful edges. Canny works by taking the output image of the Sobel operator and thinning the edges so that they are more defined.This method allows for pixel gradient values to be defined, so a pixel gradient greater than a defined value may be considered an edge, and a gradient smaller than a defined value may not be considered an edge. The Laplacian method is a 2nd derivative method, it uses one kernel and calculates the difference between the central pixel and both neighbour elements. It is computationally faster to calculate as it uses one kernel compared to the other two methods. 
 
-The Laplacian transformation, while not the perfect solution, is the easiest method to distinguished between focued and blurred images. It operates by outputting a single floating point value to represent the “blurriness” of an image. This method convolves each input image with the Laplacian operator and computes the variance. If the variance falls below a predefined threshold, the image is marked as blurry. 
+Fast Fourier Transform(FFT) is different from the above approaches as it functions to convert incoming signal from time domain to frequency domain. In the context of image processing, it converts an input image from spatial domain to frequency domain. Since edges of an image are made of high frequencies, a high frequency pass filter can be applied to a FFT image. This filter will block all low frequencies and only allow high frequencies to go through. The inverse FFT on this filter image would then be taken to view edge features in the original image. The FFT method is theoretically more reliable and accurate than other methods, but this will have to be tested in order to prove effectiveness. 
+
+## Laplacian Transformation 
+The Laplacian transformation, while not the perfect solution, is the easiest method to distinguish between focused and blurred images. It operates by outputting a single floating point value to represent the “blurriness” of an image. This method convolves each input image with the Laplacian operator and computes the variance. If the variance falls below a predefined threshold, the image is marked as blurry. 
 			<p align="center">
 			![image](https://user-images.githubusercontent.com/83466109/117067306-b1c30f80-acde-11eb-8959-174554b5a57a.png)
 			</p>
